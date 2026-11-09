@@ -1,0 +1,37 @@
+{
+  "name": "init-rspack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rspack serve",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && rspack build",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takayuki905/init-rspack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/takayuki905/init-rspack/issues"
+  },
+  "homepage": "https://github.com/takayuki905/init-rspack#readme",
+  "devDependencies": {
+    "@rspack/cli": "^2.3.1",
+    "@rspack/core": "^2.3.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
