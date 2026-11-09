@@ -1,4 +1,5 @@
 const path = require('path');
+const rspack = require('@rspack/core');
 
 module.exports = {
   entry: {
@@ -11,7 +12,7 @@ module.exports = {
   },
   resolve: {
     // import時に拡張子を省略できるように追加
-    extensions: ['.ts', '.tsx', '.js', '.jsx'], 
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -25,7 +26,7 @@ module.exports = {
               jsc: {
                 parser: {
                   syntax: 'typescript', // ここをtypescriptに変更
-                  tsx: true,            // tsxを有効化
+                  tsx: true, // tsxを有効化
                 },
                 transform: {
                   react: {
@@ -40,6 +41,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new rspack.HtmlRspackPlugin({
+      template: './public/index.html', // ひな形を指定
+    }),
+  ],
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
